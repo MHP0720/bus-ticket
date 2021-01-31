@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
+       
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Header and Menu Section-->
+    <header class="container sticky-top">
+        <nav>
+            <ul>
+                <li><a class="text-danger" href="#">Home</a></li>
+                <li><a class="text-success" href="#">About Us</a></li>
+                <li><a class="text-warning" href="#">Contact</a></li>
+                <li><a class="active text-primary" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <main  id="cutting-ticket-area"  class="main-content container">
+ 
+  <div class="booking-content">
+        <h1>Mega City Bus</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+
+
+
+
+    <div   class="booking-form">
+        <h3 class="text-warning">Explore By Bus</h3>
+
+        <div class="inputs">
+            <div class="input-group text-warning">
+                <label" for="">From</label>
+                <input class="inp-style" type="text" name="" placeholder="Dhaka">
+            </div>
+            <div class="input-group text-warning">
+                <label" for="">To</label>
+                <input class="inp-style" type="text" name="" placeholder="Chittagong">
+            </div>
+        </div>
+
+        <div class="inputs text-white">
+            <div class="input-group">
+                <label" for="">Departure</label>
+                <input class="inp-style" type="date" name="">
+            </div>
+            <div class="input-group">
+                <label for="">Return</label>
+                <input class="inp-style" type="date" name="">
+            </div>
+        </div>
+        <div class="inputs">
+            <div class="input-group f-class ">
+            <div class="text-light">
+                <label for="">First Class ($150)</label>
+                <input id="first-class-Count" class="inp-style inp-width" type="number"   value="0">
+               
+            </div>
+            <div class="plus-minus-btn ">
+                <p> <span>  <button onclick="passengersDetails('first-class',true )" class="btn btn-danger" > + </button></span> <span>  <button onclick="passengersDetails('first-class', false)" class="btn btn-primary" >-</button></span> </p>
+            </div>
+        </div>
+            <div class="input-group f-class">
+                <div class="text-light">
+                    <label for="">Economy ($100)</label>
+                    <input id="second-class-Count" class="inp-style inp-width" type="number"  value="0">
+                </div>
+                <div class="plus-minus-btn">
+                    <p> <span><button onclick="passengersDetails('second-class', true)" class="btn btn-danger" >+</button></span> <span> <button onclick="passengersDetails('second-class', false)" class="btn btn-primary" >-</button></span> </p>
+                </div>
+            </div>
+
+        </div>
+        <div  class="calculations text-light">
+            <div class="amount">
+                <div class="left">
+                    <p>Subtotal</p>
+                </div>
+                <div class="right">
+                    <p  id="total-price">$500</p>
+                </div>
+            </div>
+
+            <div class="amount">
+                <div class="left">
+                    <p>Charge 10% VAT</p>
+                </div>
+                <div class="right">
+                    <p id="tax-amount">$50</p>
+                </div>
+            </div>
+            <hr>
+            <div class="amount">
+                <div class="left">
+                    <h4>Total</h4>
+                </div>
+                <div class="right">
+                    <p id="grand-total">$550</p>
+                </div>
+            </div>
+        </div>
+        <button id="click-handler" class="btn-style bg-danger text-light">Book Now</button>
+    </div>
+
+</main>
+       
+           
+       
+
+    <div id="confirmation-area" class="card  " style="background-color:  rgba(248, 165, 10, 0.5); width: 25rem; height: 50rem; margin-top: 60px;  margin-left: 750px; ">
+        
+     
+
+      
+      <div  class="card-header" style="">
+        <h2 class=" text-center text-warning"  >CONGRATULATION!</h2>
+        <h5 class="text-center text-info">for mega journey</h5>
+        <h6  class=" text-center text-dark" ><span class="text-danger">SIR, We have  received your information .</h6>
+        
+      </div>
+      
+        
+              <div id="payment-total" class="card-body text-light" >
+              
+            
+
+                
+
+              <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label text-warning">Passenger's Name</label>
+                  <input type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label text-primary">passenger's phone</label>
+                  <input type="number" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Address 2</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">State</label>
+                  <select id="inputState" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="inputZip" class="form-label">Zip</label>
+                  <input type="text" class="form-control" id="inputZip">
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
+                  </div>
+                </div>
+                <br><br>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-danger">Check it</button>
+                </div>
+              </form>
+
+              <hr>
+
+            <div class="amount">
+                <div class="left  text-light">
+                    <h4>Total</h4>
+                    <br>
+                    <br>
+                    <br>
+                    <h6>You have to pay
+                    </h6>
+                </div>
+                <div class="right">
+                    <div  class="calculations">
+                        <div class="amount">
+                            <div class="left">
+                                <p>Subtotal</p>
+                            </div>
+                            <div class="right">
+                                <p  id="feedback-price">$500</p>
+                            </div>
+                        </div>
+            
+                        <div class="amount">
+                            <div class="left">
+                                <p>Charge 10% VAT</p>
+                            </div>
+                            <div class="right">
+                                <p id="feedback-amount">$50</p>
+                            </div>
+                        </div>
+                        <hr>
+                        
+                        <div class="amount">
+                            <div class="left">
+                                <h4>Total </h4>
+                               
+                            </div>
+                            <div class="right">
+                                <p id="feedback-total" >$550</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <br>
+              
+
+               <h6  class="card-footer text-center text-primary" >Please wait for the confirmation.</h6>
+        </div>
+
+
+
+       
+   
+    <!--Thank You-->
+
+    
+    <script>
+
+        function passengersDetails(ticket, isIncrease) {
+                        const ticketInput = document.getElementById(ticket + '-Count');
+                        const ticketCount = parseInt(ticketInput.value)
+
+                        let ticketNewCount = ticketCount ;       //must use let
+                        if(isIncrease == true){
+                            ticketNewCount =ticketCount + 1;
+                        }
+                        if (isIncrease == false && ticketCount > 0 ) {
+                            ticketNewCount = ticketCount - 1; 
+                        }
+                        ticketInput.value =  ticketNewCount;
+                     
+
+                        calculateTotal('counter-total');
+                    }
+
+
+
+                    function calculateTotal(id) {
+                     
+                       const firstClass = getInputValue('first-class');
+                       const secondClass = getInputValue('second-class');
+
+
+                       const totalPrice = firstClass * 150 + secondClass * 100;
+                       document.getElementById('total-price').innerText = '$' + totalPrice;
+
+
+
+                       const tax = totalPrice * 0.1;
+                       document.getElementById('tax-amount').innerText = '$' + tax;
+
+                       const grandTotal = totalPrice + tax;
+                       document.getElementById('grand-total').innerText = '$' + grandTotal;
+
+                       
+
+
+
+                       document.getElementById('feedback-price').innerText = '$' + totalPrice;
+
+
+                        
+                       document.getElementById('feedback-amount').innerText = '$' + tax;
+
+                     
+                       document.getElementById('feedback-total').innerText = '$' + grandTotal;
+                    }
+
+
+
+
+
+                    function getInputValue(ticket) {
+                        const ticketInput = document.getElementById(ticket + '-Count') ;
+                       const ticketCount = parseInt(ticketInput.value);
+                       return ticketCount;
+                    }
+
+                    const bookNowBtn = document.getElementById("click-handler");
+                    bookNowBtn.addEventListener("click", function(){
+                    const cuttingTicketArea = document.getElementById("cutting-ticket-area");
+                    cuttingTicketArea.style.display = "none";
+                    const confirmationArea = document.getElementById("confirmation-area");
+                    confirmationArea.style.display = "block";
+                  
+                     const total = document.getElementById('total').innerText =  '$' + grandTotal;
+
+                   
+                })
+
+       
+    </script>
+     
+
+</body>
+
+</html>
